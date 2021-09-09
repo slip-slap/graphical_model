@@ -1,0 +1,188 @@
+{
+	"BUILD_DIR" : "/Users/kismet/Desktop/qt/graphics_model/build/GM_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/kismet/Desktop/qt/graphics_model/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/kismet/Desktop/qt/graphics_model/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/kismet/Desktop/qt/graphics_model",
+	"CMAKE_EXECUTABLE" : "/opt/local/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/Users/kismet/Desktop/qt/graphics_model",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/GMSerializable.h",
+			"MU",
+			"UVLADIE3JM/moc_GMSerializable.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmedge.h",
+			"MU",
+			"UVLADIE3JM/moc_gmedge.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmgraphicsview.h",
+			"MU",
+			"UVLADIE3JM/moc_gmgraphicsview.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmnode.h",
+			"MU",
+			"UVLADIE3JM/moc_gmnode.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmobject.h",
+			"MU",
+			"UVLADIE3JM/moc_gmobject.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicscuttingline.h",
+			"MU",
+			"UVLADIE3JM/moc_gmqtgraphicscuttingline.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicsedge.h",
+			"MU",
+			"UVLADIE3JM/moc_gmqtgraphicsedge.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicsnode.h",
+			"MU",
+			"UVLADIE3JM/moc_gmqtgraphicsnode.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicsscene.h",
+			"MU",
+			"UVLADIE3JM/moc_gmqtgraphicsscene.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicssocket.h",
+			"MU",
+			"UVLADIE3JM/moc_gmqtgraphicssocket.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmscene.h",
+			"MU",
+			"UVLADIE3JM/moc_gmscene.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmsocket.h",
+			"MU",
+			"UVLADIE3JM/moc_gmsocket.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmsocketinterface.h",
+			"MU",
+			"UVLADIE3JM/moc_gmsocketinterface.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/mainwindow.h",
+			"MU",
+			"UVLADIE3JM/moc_mainwindow.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/stockedgeinterface.h",
+			"MU",
+			"UVLADIE3JM/moc_stockedgeinterface.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/stocknodeinterface.h",
+			"MU",
+			"UVLADIE3JM/moc_stocknodeinterface.cpp"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/stocksceneinterface.h",
+			"MU",
+			"UVLADIE3JM/moc_stocksceneinterface.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/Users/kismet/Desktop/qt/graphics_model/build/GM_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/kismet/Desktop/qt/graphics_model/build/GM_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/Users/kismet/Desktop/qt/graphics_model/build",
+		"/Users/kismet/Desktop/qt/graphics_model",
+		"/Users/kismet/Desktop/qt/graphics_model/src",
+		"/Users/kismet/Desktop/qt/graphics_model/include",
+		"/usr/local/Cellar/qt@5/5.15.2/lib/QtWidgets.framework",
+		"/usr/local/Cellar/qt@5/5.15.2/lib/QtWidgets.framework/Headers",
+		"/usr/local/Cellar/qt@5/5.15.2/lib/QtGui.framework",
+		"/usr/local/Cellar/qt@5/5.15.2/lib/QtGui.framework/Headers",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/Headers",
+		"/usr/local/Cellar/qt@5/5.15.2/lib/QtCore.framework",
+		"/usr/local/Cellar/qt@5/5.15.2/lib/QtCore.framework/Headers",
+		"/usr/local/Cellar/qt@5/5.15.2/mkspecs/macx-clang",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/clang++",
+		"-dM",
+		"-E",
+		"-c",
+		"/opt/local/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/Users/kismet/Desktop/qt/graphics_model/build/GM_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/Users/kismet/Desktop/qt/graphics_model/build/CMakeFiles/GM_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/local/Cellar/qt@5/5.15.2/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/local/Cellar/qt@5/5.15.2/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/Users/kismet/Desktop/qt/graphics_model/build/CMakeFiles/GM_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/Users/kismet/Desktop/qt/graphics_model/src/gmedge.cpp", "MU" ],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmgraphicsview.cpp",
+			"MU"
+		],
+		[ "/Users/kismet/Desktop/qt/graphics_model/src/gmnode.cpp", "MU" ],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicscuttingline.cpp",
+			"MU"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicsedge.cpp",
+			"MU"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicsnode.cpp",
+			"MU"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicsscene.cpp",
+			"MU"
+		],
+		[
+			"/Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicssocket.cpp",
+			"MU"
+		],
+		[ "/Users/kismet/Desktop/qt/graphics_model/src/gmscene.cpp", "MU" ],
+		[ "/Users/kismet/Desktop/qt/graphics_model/src/gmsocket.cpp", "MU" ],
+		[ "/Users/kismet/Desktop/qt/graphics_model/src/main.cpp", "MU" ],
+		[ "/Users/kismet/Desktop/qt/graphics_model/src/mainwindow.cpp", "MU" ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

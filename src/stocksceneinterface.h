@@ -1,0 +1,5 @@
+#ifndef STOCKSCENEINTERFACE_H
+#define STOCKSCENEINTERFACE_H
+class StockSceneInterface
+{};
+#endif // STOCKSCENEINTERFACE_H
