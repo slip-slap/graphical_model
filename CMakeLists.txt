@@ -14,9 +14,10 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-
 find_package(QT NAMES Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+find_package(Boost 1.76.0 REQUIRED COMPONENTS ALL)
+
 file(COPY "resource" DESTINATION ".")
 set(PROJECT_SOURCES
         src/main.cpp
@@ -47,10 +48,9 @@ set(PROJECT_SOURCES
         src/gmqtgraphicscuttingline.h
         src/gmsocketinterface.h
 
-
         src/stocknodeinterface.h
         src/stockedgeinterface.h
-        src/GMSerializable.h
+        src/gmserializable.h
         src/stocksceneinterface.h
 
         src/gmserializable.h
@@ -59,5 +59,9 @@ set(PROJECT_SOURCES
 include_directories(./src)
 include_directories(./include)
 qt5_add_resources(PROJECT_SOURCES resource.qrc)
+
+
 add_executable(GM ${PROJECT_SOURCES})
+target_include_directories(GM PUBLIC ${Boost_INCLUDE_DIRS})
 target_link_libraries(GM PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(GM PRIVATE ${Boost_LIBRARIES})

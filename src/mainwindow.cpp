@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include <iostream>
 #include <QGraphicsEllipseItem>
 #include <QPainter>
 #include <QFileDialog>
@@ -10,7 +9,11 @@
 #include "gmsocket.h"
 #include "gmedge.h"
 #include "gmqtgraphicscuttingline.h"
+
+#include <iostream>
 #include <fstream>
+
+#include <boost/filesystem.hpp>
 
 #include "json/json.hpp"
 extern std::size_t USED_MEMRORY;
@@ -102,7 +105,8 @@ void MainWindow::on_actionOpen_triggered()
 
     //QString file_name = QFileDialog::getOpenFileName();
     //std::ifstream i(file_name.toStdString());
-    std::ifstream i("/Users/kismet/Desktop/output.json");
+    boost::filesystem::path current_path = boost::filesystem::current_path();
+    std::ifstream i(std::string(current_path.c_str()).append("/output.json"));
     nlohmann::json json_file;
     i >> json_file;
     i.close();
@@ -126,9 +130,12 @@ void MainWindow::on_actionZoom_Out_triggered()
 
 void MainWindow::on_actionSave_triggered()
 {
-
+     boost::filesystem::path full_path = boost::filesystem::current_path();
+     std::cout<<full_path<<std::endl;
+     std::string file_full_path = std::string(full_path.c_str());
      std::ofstream seriable;
-     seriable.open("/Users/kismet/Desktop/output.json");
+     file_full_path.append("/output.json");
+     seriable.open(file_full_path);
      nlohmann::json js;
      seriable<<js.parse(m_scene->serialize()).dump(4)<<std::endl;
      //std::cout<<std::setw(4)<<js<<std::endl;

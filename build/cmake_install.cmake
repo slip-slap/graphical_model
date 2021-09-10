@@ -1,4 +1,4 @@
-# Install script for directory: /Users/kismet/Desktop/qt/graphics_model
+# Install script for directory: /Users/kismet/Desktop/git_project/graphics_model
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/kismet/Desktop/qt/graphics_model/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/kismet/Desktop/git_project/graphics_model/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

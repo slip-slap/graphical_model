@@ -18,7 +18,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/GM.dir/src/mainwindow.cpp.o"
   "GM"
   "GM.pdb"
-  "qrc_resource.cpp"
 )
 
 # Per-language clean rules from dependency scanning.

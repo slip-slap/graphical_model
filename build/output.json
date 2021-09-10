@@ -1,47 +1,165 @@
-[
-    [
-        "node",
+{
+    "edge": [
         {
-            "id": 140622636421296.0,
-            "scene": 140622636403232.0,
-            "socket1": [
-                "identifierdd",
-                140622636372208.0
-            ],
-            "socket2": [
-                "identifierdd",
-                140622636372208.0
+            "id": 13,
+            "scene": 0,
+            "socket": [
+                {
+                    "id": 3
+                },
+                {
+                    "id": 5
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "scene": 0,
+            "socket": [
+                {
+                    "id": 5
+                },
+                {
+                    "id": 8
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "scene": 0,
+            "socket": [
+                {
+                    "id": 2
+                },
+                {
+                    "id": 8
+                }
             ]
         }
     ],
-    [
-        "node",
+    "node": [
         {
-            "id": 140622636421872.0,
-            "scene": 140622636403232.0,
-            "socket1": [
-                "identifierdd",
-                140622636367120.0
-            ],
-            "socket2": [
-                "identifierdd",
-                140622636367120.0
+            "id": 1,
+            "pos_x": 50.0,
+            "pos_y": 50.0,
+            "scene": 0,
+            "socket": [
+                {
+                    "id": 2
+                },
+                {
+                    "id": 3
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "pos_x": 200.0,
+            "pos_y": 200.0,
+            "scene": 0,
+            "socket": [
+                {
+                    "id": 5
+                },
+                {
+                    "id": 6
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "pos_x": 400.0,
+            "pos_y": 100.0,
+            "scene": 0,
+            "socket": [
+                {
+                    "id": 8
+                },
+                {
+                    "id": 9
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "pos_x": 300.0,
+            "pos_y": 200.0,
+            "scene": 0,
+            "socket": [
+                {
+                    "id": 11
+                },
+                {
+                    "id": 12
+                }
             ]
         }
     ],
-    [
-        "node",
+    "scene_height": 1000.0,
+    "scene_id": 0,
+    "scene_width": 1000.0,
+    "socket": [
         {
-            "id": 140622636421808.0,
-            "scene": 140622636403232.0,
-            "socket1": [
-                "identifierdd",
-                140622636420432.0
+            "connected_edges": [
+                {
+                    "id": 15
+                }
             ],
-            "socket2": [
-                "identifierdd",
-                140622636420432.0
-            ]
+            "id": 2,
+            "position": 0
+        },
+        {
+            "connected_edges": [
+                {
+                    "id": 13
+                }
+            ],
+            "id": 3,
+            "position": 1
+        },
+        {
+            "connected_edges": [
+                {
+                    "id": 13
+                },
+                {
+                    "id": 14
+                }
+            ],
+            "id": 5,
+            "position": 0
+        },
+        {
+            "connected_edges": null,
+            "id": 6,
+            "position": 1
+        },
+        {
+            "connected_edges": [
+                {
+                    "id": 14
+                },
+                {
+                    "id": 15
+                }
+            ],
+            "id": 8,
+            "position": 0
+        },
+        {
+            "connected_edges": null,
+            "id": 9,
+            "position": 1
+        },
+        {
+            "connected_edges": null,
+            "id": 11,
+            "position": 0
+        },
+        {
+            "connected_edges": null,
+            "id": 12,
+            "position": 1
         }
     ]
-]
+}

@@ -26,25 +26,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 62,
+				"line" : 61,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 63,
+				"line" : 62,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 58,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
 				"line" : 59,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 60,
 				"parent" : 0
 			}
 		]
@@ -83,22 +83,19 @@
 			"includes" : 
 			[
 				{
-					"path" : "/Users/kismet/Desktop/qt/graphics_model/build"
-				},
-				{
-					"path" : "/Users/kismet/Desktop/qt/graphics_model"
+					"path" : "/Users/kismet/Desktop/git_project/graphics_model"
 				},
 				{
 					"backtrace" : 0,
-					"path" : "/Users/kismet/Desktop/qt/graphics_model/build/GM_autogen/include"
+					"path" : "/Users/kismet/Desktop/git_project/graphics_model/GM_autogen/include"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/Users/kismet/Desktop/qt/graphics_model/./src"
+					"path" : "/Users/kismet/Desktop/git_project/graphics_model/./src"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/Users/kismet/Desktop/qt/graphics_model/./include"
+					"path" : "/Users/kismet/Desktop/git_project/graphics_model/./include"
 				},
 				{
 					"backtrace" : 2,
@@ -253,8 +250,7 @@
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				4,
-				32
+				4
 			]
 		}
 	],
@@ -264,7 +260,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/GM_autogen/mocs_compilation.cpp",
+			"path" : "GM_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -421,7 +417,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/GMSerializable.h",
+			"path" : "src/gmserializable.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -433,13 +429,8 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/qrc_resource.cpp",
+			"path" : "qrc_resource.cpp",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 0,
-			"path" : "resource.qrc",
-			"sourceGroupIndex" : 2
 		}
 	],
 	"type" : "EXECUTABLE"

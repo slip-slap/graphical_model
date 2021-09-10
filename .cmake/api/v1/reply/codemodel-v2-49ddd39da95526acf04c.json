@@ -40,14 +40,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "GM::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GM-Debug-b6380539a199ba863d77.json",
+					"jsonFile" : "target-GM-Debug-81d61af58df43585dd65.json",
 					"name" : "GM",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "GM_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GM_autogen-Debug-505cfa8861c62b75a301.json",
+					"jsonFile" : "target-GM_autogen-Debug-772bbf833a28cd82d22d.json",
 					"name" : "GM_autogen",
 					"projectIndex" : 0
 				}
@@ -57,8 +57,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/kismet/Desktop/qt/graphics_model/build",
-		"source" : "/Users/kismet/Desktop/qt/graphics_model"
+		"build" : "/Users/kismet/Desktop/git_project/graphics_model",
+		"source" : "/Users/kismet/Desktop/git_project/graphics_model"
 	},
 	"version" : 
 	{

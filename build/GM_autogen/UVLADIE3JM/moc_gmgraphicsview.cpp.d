@@ -1,5 +1,5 @@
-/Users/kismet/Desktop/qt/graphics_model/build/GM_autogen/UVLADIE3JM/moc_gmgraphicsview.cpp: /Users/kismet/Desktop/qt/graphics_model/src/gmgraphicsview.h \
-  /Users/kismet/Desktop/qt/graphics_model/build/GM_autogen/moc_predefs.h \
+/Users/kismet/Desktop/git_project/graphics_model/build/GM_autogen/UVLADIE3JM/moc_gmgraphicsview.cpp: /Users/kismet/Desktop/git_project/graphics_model/src/gmgraphicsview.h \
+  /Users/kismet/Desktop/git_project/graphics_model/build/GM_autogen/moc_predefs.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityMacros.h \
@@ -116,17 +116,17 @@
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wchar.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wctype.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include/stdarg.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/gmnode.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/gmobject.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicscuttingline.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicsnode.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/gmqtgraphicsscene.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/gmscene.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/gmserializable.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/gmsocketinterface.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/stockedgeinterface.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/stocknodeinterface.h \
-  /Users/kismet/Desktop/qt/graphics_model/src/stocksceneinterface.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/gmnode.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/gmobject.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/gmqtgraphicscuttingline.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/gmqtgraphicsnode.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/gmqtgraphicsscene.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/gmscene.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/gmserializable.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/gmsocketinterface.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/stockedgeinterface.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/stocknodeinterface.h \
+  /Users/kismet/Desktop/git_project/graphics_model/src/stocksceneinterface.h \
   /usr/local/Cellar/qt@5/5.15.2/lib/QtCore.framework/Versions/5/Headers/QEvent \
   /usr/local/Cellar/qt@5/5.15.2/lib/QtCore.framework/Versions/5/Headers/QPointF \
   /usr/local/Cellar/qt@5/5.15.2/lib/QtCore.framework/Versions/5/Headers/qabstractitemmodel.h \
