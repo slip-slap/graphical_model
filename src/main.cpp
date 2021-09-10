@@ -16,7 +16,6 @@ void* operator new(std::size_t size){
     mach_msg_type_number_t t_info_count = TASK_BASIC_INFO_COUNT;
     task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)&t_info,
             &t_info_count);
-    std::cout<<t_info.resident_size<<std::endl;
     return malloc(size);
 }
 

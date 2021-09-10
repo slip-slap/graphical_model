@@ -1,4 +1,0 @@
-/Users/kismet/Desktop/git_project/graphics_model/build/CMakeFiles/rebuild_cache.dir
-/Users/kismet/Desktop/git_project/graphics_model/build/CMakeFiles/edit_cache.dir
-/Users/kismet/Desktop/git_project/graphics_model/build/CMakeFiles/GM.dir
-/Users/kismet/Desktop/git_project/graphics_model/build/CMakeFiles/GM_autogen.dir
