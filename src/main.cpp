@@ -14,8 +14,7 @@ void* operator new(std::size_t size){
     USED_MEMRORY = USED_MEMRORY + size;
     struct task_basic_info t_info;
     mach_msg_type_number_t t_info_count = TASK_BASIC_INFO_COUNT;
-    task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)&t_info,
-            &t_info_count);
+    task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)&t_info, &t_info_count);
     return malloc(size);
 }
 

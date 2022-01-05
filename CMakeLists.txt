@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(GM LANGUAGES CXX)
 
-set(CMAKE_PREFIX_PATH /usr/local/Cellar/qt@5/5.15.2)
+set(CMAKE_PREFIX_PATH /usr/local/Cellar/qt@5/5.15.2_1)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -12,6 +12,8 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+message(${CMAKE_SOURCE_DIR})
 
 
 find_package(QT NAMES Qt5 COMPONENTS Widgets REQUIRED)
@@ -58,6 +60,7 @@ set(PROJECT_SOURCES
 
 include_directories(./src)
 include_directories(./include)
+
 qt5_add_resources(PROJECT_SOURCES resource.qrc)
 
 
@@ -65,3 +68,7 @@ add_executable(GM ${PROJECT_SOURCES})
 target_include_directories(GM PUBLIC ${Boost_INCLUDE_DIRS})
 target_link_libraries(GM PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(GM PRIVATE ${Boost_LIBRARIES})
+
+#add_library(GMLIBRARY ${GM})
+
+add_subdirectory(test)
