@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QGraphicsScene>
-#include <gmscene.h>
+#include "gmscene.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

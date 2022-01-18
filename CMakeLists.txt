@@ -22,40 +22,37 @@ find_package(Boost 1.76.0 REQUIRED COMPONENTS ALL)
 
 file(COPY "resource" DESTINATION ".")
 set(PROJECT_SOURCES
-        src/main.cpp
         src/mainwindow.cpp
-        src/mainwindow.h
+        #src/mainwindow.h
         mainwindow.ui
-        src/gmobject.h
+        #src/gmobject.h
         src/gmgraphicsview.cpp
-        src/gmgraphicsview.h
+        #src/gmgraphicsview.h
         src/gmscene.cpp
-        src/gmscene.h
+        #src/gmscene.h
         src/gmnode.cpp
-        src/gmnode.h
+        #src/gmnode.h
         src/gmedge.cpp
-        src/gmedge.h
+        #src/gmedge.h
         src/gmsocket.cpp
-        src/gmsocket.h
-
+        #src/gmsocket.h
         src/gmqtgraphicssocket.cpp
-        src/gmqtgraphicssocket.h
-        src/gmqtgraphicsscene.h
+        #src/gmqtgraphicssocket.h
+        #src/gmqtgraphicsscene.h
         src/gmqtgraphicsscene.cpp
         src/gmqtgraphicsnode.cpp
-        src/gmqtgraphicsnode.h
+        #src/gmqtgraphicsnode.h
         src/gmqtgraphicsedge.cpp
-        src/gmqtgraphicsedge.h
+        #src/gmqtgraphicsedge.h
         src/gmqtgraphicscuttingline.cpp
-        src/gmqtgraphicscuttingline.h
-        src/gmsocketinterface.h
+        #src/gmqtgraphicscuttingline.h
+        #src/gmsocketinterface.h
+        #src/stocknodeinterface.h
+        #src/stockedgeinterface.h
+        #src/gmserializable.h
+        #src/stocksceneinterface.h
 
-        src/stocknodeinterface.h
-        src/stockedgeinterface.h
-        src/gmserializable.h
-        src/stocksceneinterface.h
-
-        src/gmserializable.h
+        #src/gmserializable.h
 )
 
 include_directories(./src)
@@ -64,11 +61,16 @@ include_directories(./include)
 qt5_add_resources(PROJECT_SOURCES resource.qrc)
 
 
-add_executable(GM ${PROJECT_SOURCES})
-target_include_directories(GM PUBLIC ${Boost_INCLUDE_DIRS})
+add_executable(GM  src/main.cpp ${PROJECT_SOURCES})
+
+target_include_directories(GM INTERFACE include)
+target_include_directories(GM INTERFACE src)
+target_include_directories(GM INTERFACE ${Boost_INCLUDE_DIRS})
 target_link_libraries(GM PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(GM PRIVATE ${Boost_LIBRARIES})
 
-#add_library(GMLIBRARY ${GM})
+add_library(GMLIBRARY ${PROJECT_SOURCES})
+target_include_directories(GMLIBRARY INTERFACE include)
+target_link_libraries(GMLIBRARY PUBLIC Qt${QT_VERSION_MAJOR}::Widgets ${Boost_LIBRARIES})
 
 add_subdirectory(test)
