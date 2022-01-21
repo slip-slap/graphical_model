@@ -16,6 +16,7 @@
 #include <boost/filesystem.hpp>
 
 #include "json/json.hpp"
+
 extern std::size_t USED_MEMRORY;
 
 MainWindow::MainWindow(QWidget *parent)
