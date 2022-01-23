@@ -7,6 +7,7 @@ Contents
 Introduction
 -----
 This is a try on visualization of probabilistic graphical model.
+
 Installation
 -----
 ### Requirements
