@@ -17,7 +17,7 @@
 
 #include "json/json.hpp"
 
-extern std::size_t USED_MEMRORY;
+//extern std::size_t USED_MEMRORY;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -70,9 +70,9 @@ MainWindow::~MainWindow()
 void MainWindow::mousePressEvent(QMouseEvent* event)
 {
     std::cout<<"mainwindow press event"<<std::endl;
-    std::string memory = std::to_string(USED_MEMRORY);
-    QString message(memory.c_str());
-    ui->statusbar->showMessage(message);
+    //std::string memory = std::to_string(USED_MEMRORY);
+    //QString message(memory.c_str());
+    //ui->statusbar->showMessage(message);
     QMainWindow::mousePressEvent(event);
 }
 
@@ -102,12 +102,9 @@ void MainWindow::on_actionExit_2_triggered()
 
 void MainWindow::on_actionOpen_triggered()
 {
-
-
-    //QString file_name = QFileDialog::getOpenFileName();
-    //std::ifstream i(file_name.toStdString());
-    boost::filesystem::path current_path = boost::filesystem::current_path();
-    std::ifstream i(std::string(current_path.c_str()).append("/output.json"));
+    QString file_name = QFileDialog::getOpenFileName();
+    //boost::filesystem::path current_path = boost::filesystem::current_path();
+    std::ifstream i(file_name.toStdString());
     nlohmann::json json_file;
     i >> json_file;
     i.close();
@@ -115,8 +112,6 @@ void MainWindow::on_actionOpen_triggered()
     for(int ll=0; ll < json_file["node"].size(); ll++ ){
         std::cout<<json_file["node"][ll]["socket1"].dump(8)<<std::endl;
     }
-    //std::cout<<json_file["edge"].dump(8);
-    /**/
 }
 
 void MainWindow::on_actionZoom_In_triggered()
@@ -131,15 +126,11 @@ void MainWindow::on_actionZoom_Out_triggered()
 
 void MainWindow::on_actionSave_triggered()
 {
-     boost::filesystem::path full_path = boost::filesystem::current_path();
-     std::cout<<full_path<<std::endl;
-     std::string file_full_path = std::string(full_path.c_str());
+     QString filename = QFileDialog::getSaveFileName(this,"Save Graphical Model","","gm.json");
      std::ofstream seriable;
-     file_full_path.append("/output.json");
-     seriable.open(file_full_path);
+     seriable.open(filename.toStdString());
      nlohmann::json js;
      seriable<<js.parse(m_scene->serialize()).dump(4)<<std::endl;
-     //std::cout<<std::setw(4)<<js<<std::endl;
      seriable.close();
 }
 

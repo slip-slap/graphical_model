@@ -31,7 +31,7 @@ protected:
 
 protected slots:
     void foo();
-private slots:
+public slots:
     void on_actionExit_2_triggered();
     void on_actionOpen_triggered();
     void on_actionZoom_In_triggered();
