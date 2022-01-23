@@ -44,7 +44,5 @@ add_library(GMLIBRARY ${PROJECT_SOURCES})
 target_include_directories(GMLIBRARY INTERFACE ${GM_SOURCE_DIR}/include)
 target_include_directories(GMLIBRARY INTERFACE ${GM_SOURCE_DIR}/src)
 target_link_libraries(GMLIBRARY PUBLIC Qt${QT_VERSION_MAJOR}::Widgets)
-target_link_libraries(GMLIBRARY PUBLIC Qt${QT_VERSION_MAJOR}::Core)
-target_link_libraries(GMLIBRARY PUBLIC Qt${QT_VERSION_MAJOR}::Gui)
 target_link_libraries(GMLIBRARY PUBLIC ${Boost_LIBRARIES})
 

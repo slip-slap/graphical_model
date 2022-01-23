@@ -104,13 +104,15 @@ void MainWindow::on_actionOpen_triggered()
 {
     QString file_name = QFileDialog::getOpenFileName();
     //boost::filesystem::path current_path = boost::filesystem::current_path();
-    std::ifstream i(file_name.toStdString());
-    nlohmann::json json_file;
-    i >> json_file;
-    i.close();
-    m_scene->deserialize(json_file.dump(4));
-    for(int ll=0; ll < json_file["node"].size(); ll++ ){
-        std::cout<<json_file["node"][ll]["socket1"].dump(8)<<std::endl;
+    if(file_name.toStdString() != ""){
+        std::ifstream i(file_name.toStdString());
+        nlohmann::json json_file;
+        i >> json_file;
+        i.close();
+        m_scene->deserialize(json_file.dump(4));
+        for(unsigned int ll=0; ll < json_file["node"].size(); ll++ ){
+            std::cout<<json_file["node"][ll]["socket1"].dump(8)<<std::endl;
+        }
     }
 }
 
