@@ -44,6 +44,9 @@ protected:
     void mouseReleaseEvent(QMouseEvent* event) override;
     void contextMenuEvent(QContextMenuEvent* event) override;
 
+    void dragEnterEvent(QDragEnterEvent *event) override;
+   // void dragLeaveEvent(QDragLeaveEvent *event) override;
+   // void dragMoveEvent(QDragMoveEvent *event) override;
 private:
     int m_mode=1;
     GMQtGraphicScene* m_stock_graphics_scene;  

@@ -25,6 +25,8 @@ set(PROJECT_SOURCES
         gmqtgraphicsnode.cpp
         gmqtgraphicsedge.cpp
         gmqtgraphicscuttingline.cpp
+
+        gmqtlistwidget.cpp
 )
 
 

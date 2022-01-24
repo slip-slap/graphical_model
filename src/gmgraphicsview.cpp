@@ -10,12 +10,15 @@ int MODE_EDGE_DRAG = 2;
 int MODE_CUTTING_LINE = 3;
 
 GMGraphicsView::GMGraphicsView(QWidget *parent): QGraphicsView(parent){
-    //this->setStyleSheet(QString(
-    // "background-color: #FFFFFF;border-width: 2px;border-radius:2px;border-style: inset;border-color: #FFFFFF;"));
     m_remove_action = new QAction("delete item",this);
     connect(m_remove_action, SIGNAL(triggered()),this, SLOT(RemoveSelectedItems()));
     m_mode = MODE_NO_OPERATION;
+
+    // enable dropping
+    this->setAcceptDrops(true);
+
 }
+
 GMGraphicsView::~GMGraphicsView(){}
 
 
@@ -55,23 +58,11 @@ void GMGraphicsView::mouseMoveEvent(QMouseEvent *event)
 void GMGraphicsView::mousePressEvent(QMouseEvent *event)
 {
     QGraphicsItem* item =this->itemAt(event->pos());
-    if(event->button() == Qt::LeftButton)
-    {
-        if (item == nullptr)
-        {
-            this->m_mode = MODE_CUTTING_LINE;
-            QMouseEvent* fake_event = new QMouseEvent(QEvent::MouseButtonRelease,event->localPos(),
-                                                 event->screenPos(), Qt::LeftButton, Qt::NoButton,
-                                                 event->modifiers());
-            QGraphicsView::mouseReleaseEvent(fake_event);
 
-            QApplication::setOverrideCursor(Qt::CrossCursor);
-            return;
-        }
+    if(event->button() == Qt::LeftButton && m_mode == MODE_NO_OPERATION)
+    {
         if(GMQtGraphicSocket* v=dynamic_cast<GMQtGraphicSocket*>(item))
         {
-           if(m_mode == MODE_NO_OPERATION)
-           {
                this->m_mode = MODE_EDGE_DRAG;
                std::cout<<"start dragging edge"<<std::endl;
                if(GMQtGraphicSocket* v=dynamic_cast<GMQtGraphicSocket*>(item))
@@ -85,22 +76,24 @@ void GMGraphicsView::mousePressEvent(QMouseEvent *event)
                    this->m_drag_stock_edge_interface = new GMEdge(stock_scene,start,end);
                    return;
                }
-           }
         }
     }
-    /*
-    if(event->modifiers() & Qt::ShiftModifier)
+
+    if(event->button() == Qt::LeftButton && m_mode == MODE_NO_OPERATION)
     {
-        std::cout<<"all modifiers: "<<event->modifiers()<<std::endl;
-        std::cout<<(event->modifiers() | Qt::ShiftModifier)<<std::endl;
-        std::cout<<"left click + shift"<<std::endl;
-        event->ignore();
-        QMouseEvent* fake_event = new QMouseEvent(QEvent::MouseButtonPress, event->localPos()
-                                             , Qt::LeftButton, event->buttons() | Qt::LeftButton
-                                             , event->modifiers() | Qt::ControlModifier);
-        QGraphicsView::mousePressEvent(fake_event);
-        return;
-    }*/
+        if (item == nullptr)
+        {
+            this->m_mode = MODE_CUTTING_LINE;
+            QMouseEvent* fake_event = new QMouseEvent(QEvent::MouseButtonRelease,event->localPos(),
+                                                 event->screenPos(), Qt::LeftButton, Qt::NoButton,
+                                                 event->modifiers());
+            QGraphicsView::mouseReleaseEvent(fake_event);
+
+            QApplication::setOverrideCursor(Qt::CrossCursor);
+            return;
+        }
+    }
+
 
     QGraphicsView::mousePressEvent(event);
 }
@@ -108,44 +101,31 @@ void GMGraphicsView::mousePressEvent(QMouseEvent *event)
 void GMGraphicsView::mouseReleaseEvent(QMouseEvent *event)
 {
     QGraphicsItem* item =this->itemAt(event->pos());
-    if(event->button() == Qt::LeftButton)
-    {
-        if(this->m_mode == MODE_CUTTING_LINE)
-        {
-            m_mode = MODE_NO_OPERATION;
-            // remove all the cutting line
-            m_stock_graphics_cutting_line->ClearPoint();
-            m_stock_graphics_cutting_line->update();
-            QApplication::setOverrideCursor(Qt::ArrowCursor);
-        }
 
-        if (this->m_mode == MODE_EDGE_DRAG)
-        {
-            this->m_mode = MODE_NO_OPERATION;
-            std::cout<<"end dragging edge"<<std::endl;
-            if(GMQtGraphicSocket* v=dynamic_cast<GMQtGraphicSocket*>(item))
-            {
-                //StockEdge* stock_edge = static_cast<StockEdge*>(m_drag_stock_edge_interface);
-                GMScene* stock_scene = m_stock_graphics_scene->GetGMScene();
-                m_drag_stock_edge_end =  v->GetStockSocketInterface();
-                new GMEdge(stock_scene, m_drag_stock_edge_start,m_drag_stock_edge_end);
-                stock_scene->RemoveEdge(m_drag_stock_edge_interface);
-                std::cout<<"assign end socket"<<std::endl;
-            }
-            return;
-        }
-    }
-    if(event->modifiers() & Qt::ShiftModifier)
+    if(event->button() == Qt::LeftButton && this->m_mode == MODE_CUTTING_LINE)
     {
-        std::cout<<"left release + shift"<<std::endl;
-        event->ignore();
-        QMouseEvent* fake_event = new QMouseEvent(event->type(), event->localPos()
-                                             , Qt::LeftButton, Qt::NoButton
-                                             , event->modifiers() | Qt::ControlModifier);
-        QGraphicsView::mouseReleaseEvent(fake_event);
-        return;
+        m_mode = MODE_NO_OPERATION;
+        // remove all the cutting line
+        m_stock_graphics_cutting_line->ClearPoint();
+        m_stock_graphics_cutting_line->update();
+        QApplication::setOverrideCursor(Qt::ArrowCursor);
     }
 
+    if(event->button() == Qt::LeftButton && this->m_mode == MODE_EDGE_DRAG)
+    { 
+        this->m_mode = MODE_NO_OPERATION;
+        std::cout<<"end dragging edge"<<std::endl;
+        if(GMQtGraphicSocket* v=dynamic_cast<GMQtGraphicSocket*>(item))
+        {
+             //StockEdge* stock_edge = static_cast<StockEdge*>(m_drag_stock_edge_interface);
+             GMScene* stock_scene = m_stock_graphics_scene->GetGMScene();
+             m_drag_stock_edge_end =  v->GetStockSocketInterface();
+             new GMEdge(stock_scene, m_drag_stock_edge_start,m_drag_stock_edge_end);
+             stock_scene->RemoveEdge(m_drag_stock_edge_interface);
+             std::cout<<"assign end socket"<<std::endl;
+         }
+         return;
+    }
 
     QGraphicsView::mouseReleaseEvent(event);
 }
@@ -164,4 +144,11 @@ void GMGraphicsView::contextMenuEvent(QContextMenuEvent *event)
     QMenu menu(this);
     menu.addAction(m_remove_action);
     menu.exec(event->globalPos());
+}
+
+void GMGraphicsView::dragEnterEvent(QDragEnterEvent *event)
+{
+    std::cout<<"drag enter"<<std::endl;
+    GMNode* gm_node = new GMNode(m_stock_graphics_scene->GetGMScene());
+    gm_node->SetStockNodePosition(event->pos());
 }

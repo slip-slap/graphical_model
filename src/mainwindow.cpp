@@ -53,6 +53,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->ui->graphicsView->SetGMQtGraphicsCuttingLine(cutting_line);
     this->ui->graphicsView->setDragMode(QGraphicsView::RubberBandDrag);
 
+
+
     timer = new QTimer(this);
     //connect(timer, SIGNAL(timeout()),scene,SLOT(advance()));
     //connect(timer, SIGNAL(timeout()),scene,SLOT(update()));
