@@ -106,6 +106,24 @@ void GMGraphicsView::mouseReleaseEvent(QMouseEvent *event)
     {
         m_mode = MODE_NO_OPERATION;
         // remove all the cutting line
+        std::vector<StockEdgeInterface*> edge_container = this->m_stock_graphics_scene->GetGMScene()->GetStockEdgesVector();
+        QVector<QPoint> point_container = m_stock_graphics_cutting_line->getQpoints();
+        //for(QPoint* start = point_container.begin(); start!=point_container.end()-2;)
+        //{
+            QPoint p1 = point_container[1];
+            QPoint p2 = *point_container.rbegin();
+            for(auto i:edge_container)
+            {
+                GMEdge* stock_edge = static_cast<GMEdge*>(i);
+                GMQtGraphicsEdge* gmqt_graphics_edge = stock_edge->GetGMQtGraphicsEdge();
+
+                if(gmqt_graphics_edge->isIntersectsWith(p1, p2))
+                {
+                    stock_edge->RemoveEdge();
+                }
+            }
+        //}
+
         m_stock_graphics_cutting_line->ClearPoint();
         m_stock_graphics_cutting_line->update();
         QApplication::setOverrideCursor(Qt::ArrowCursor);
@@ -115,6 +133,8 @@ void GMGraphicsView::mouseReleaseEvent(QMouseEvent *event)
     { 
         this->m_mode = MODE_NO_OPERATION;
         std::cout<<"end dragging edge"<<std::endl;
+        GMEdge* stock_edge = static_cast<GMEdge*>(this->m_drag_stock_edge_interface);
+        stock_edge->RemoveEdge();
         if(GMQtGraphicSocket* v=dynamic_cast<GMQtGraphicSocket*>(item))
         {
              //StockEdge* stock_edge = static_cast<StockEdge*>(m_drag_stock_edge_interface);

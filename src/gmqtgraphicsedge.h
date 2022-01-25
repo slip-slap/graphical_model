@@ -22,10 +22,12 @@ public:
     void SetTarget(QPointF target);
     QPointF GetSource();
     QPointF GetTarget();
+	bool isIntersectsWith(QPointF p1, QPointF p2);
 
 private:
     QPointF m_source;
     QPointF m_target;
+    QPainterPath m_path;
 };
 
 #endif // GRAPHICSEDGE_H

@@ -14,6 +14,7 @@ public:
     GMQtGraphicsCuttingLine();
     GMQtGraphicsCuttingLine(GMQtGraphicScene* stock_graphics_scene);
     void AppendQPoint(QPoint point);
+    QVector<QPoint> getQpoints() const;
     void ClearPoint();
 
 public:

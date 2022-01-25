@@ -136,6 +136,11 @@ void GMEdge::SetStartAndEndSocket(GMSocketInterface *start, GMSocketInterface *e
     m_end_socket->AddRelatedEdge(this);
 }
 
+GMQtGraphicsEdge *GMEdge::GetGMQtGraphicsEdge() const
+{
+    return m_gmqt_edge;
+}
+
 std::string GMEdge::serialize()
 {
     GMSocket* gm_socket1 = (GMSocket*)m_start_socket;

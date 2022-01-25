@@ -15,6 +15,11 @@ void GMQtGraphicsCuttingLine::AppendQPoint(QPoint point)
     m_qpoints.append(point);
 }
 
+QVector<QPoint> GMQtGraphicsCuttingLine::getQpoints() const
+{
+    return m_qpoints;
+}
+
 void GMQtGraphicsCuttingLine::ClearPoint()
 {
     m_qpoints.clear();

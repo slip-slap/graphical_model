@@ -27,6 +27,7 @@ public:
     const int& GetStartSocketId() const;
     const int& GetEndSocketId() const;
     void SetStartAndEndSocket(GMSocketInterface* start, GMSocketInterface* end);
+	GMQtGraphicsEdge* GetGMQtGraphicsEdge() const;
 
 public:
     std::string serialize() override;
