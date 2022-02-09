@@ -28,6 +28,21 @@ GMNode::GMNode(GMScene *scene, int placeholder)
 
 }
 
+GMNode::GMNode(GMScene *scene, std::string title)
+{
+    m_id = GMScene::GenerateIDforGMObject();
+    m_gm_scene = scene;
+    m_gmqt_graphics_node = new GMQtGraphicsNode(this,title);
+    m_gm_north_anchor= new GMSocket(this, POSITION::NORTH_ANCHOR);
+    m_gm_south_anchor= new GMSocket(this, POSITION::SOUTH_ANCHOR);
+    GMSocket* gm_socket1 = static_cast<GMSocket*>(m_gm_north_anchor);
+    gm_socket1->GetStockGraphicsSocket()->setParentItem(m_gmqt_graphics_node);
+    GMSocket* gm_socket2 = static_cast<GMSocket*>(m_gm_south_anchor);
+    gm_socket2->GetStockGraphicsSocket()->setParentItem(m_gmqt_graphics_node);
+
+    m_gm_scene->AddNode(this);
+}
+
 
 GMQtGraphicsNode *GMNode::GetStockGraphicsNode()
 {

@@ -32,29 +32,6 @@ void GMGraphicsView::SetGMQtGraphicsCuttingLine(GMQtGraphicsCuttingLine *stock_g
     this->m_stock_graphics_cutting_line = stock_graphics_cutting_line;
 }
 
-
-
-void GMGraphicsView::mouseMoveEvent(QMouseEvent *event)
-{
-     if(this->m_mode == MODE_CUTTING_LINE)
-     {
-         QPointF pos = mapToScene(event->pos());
-         m_stock_graphics_cutting_line->AppendQPoint(pos.toPoint());
-         m_stock_graphics_cutting_line->update();
-     }
-
-     if(this->m_mode == MODE_EDGE_DRAG)
-     {
-         GMEdge* stock_edge = static_cast<GMEdge*>(this->m_drag_stock_edge_interface);
-         if(stock_edge!=nullptr)
-         {
-             stock_edge->SetTarget(mapToScene(event->pos()));
-         }
-     }
-     QGraphicsView::mouseMoveEvent(event);
-
-}
-
 void GMGraphicsView::mousePressEvent(QMouseEvent *event)
 {
     QGraphicsItem* item =this->itemAt(event->pos());
@@ -81,7 +58,7 @@ void GMGraphicsView::mousePressEvent(QMouseEvent *event)
 
     if(event->button() == Qt::LeftButton && m_mode == MODE_NO_OPERATION)
     {
-        if (item == nullptr)
+        if (item == nullptr && event->modifiers() & Qt::ShiftModifier)
         {
             this->m_mode = MODE_CUTTING_LINE;
             QMouseEvent* fake_event = new QMouseEvent(QEvent::MouseButtonRelease,event->localPos(),
@@ -98,11 +75,34 @@ void GMGraphicsView::mousePressEvent(QMouseEvent *event)
     QGraphicsView::mousePressEvent(event);
 }
 
+
+void GMGraphicsView::mouseMoveEvent(QMouseEvent *event)
+{
+     if(this->m_mode == MODE_CUTTING_LINE)
+     {
+         QPointF pos = mapToScene(event->pos());
+         m_stock_graphics_cutting_line->AppendQPoint(pos.toPoint());
+         m_stock_graphics_cutting_line->update();
+     }
+
+     if(this->m_mode == MODE_EDGE_DRAG)
+     {
+         GMEdge* stock_edge = static_cast<GMEdge*>(this->m_drag_stock_edge_interface);
+         if(stock_edge!=nullptr)
+         {
+             stock_edge->SetTarget(mapToScene(event->pos()));
+         }
+     }
+     QGraphicsView::mouseMoveEvent(event);
+
+}
+
+
 void GMGraphicsView::mouseReleaseEvent(QMouseEvent *event)
 {
     QGraphicsItem* item =this->itemAt(event->pos());
 
-    if(event->button() == Qt::LeftButton && this->m_mode == MODE_CUTTING_LINE)
+    if(event->button() == Qt::LeftButton && this->m_mode == MODE_CUTTING_LINE && event->modifiers() & Qt::ShiftModifier)
     {
         m_mode = MODE_NO_OPERATION;
         // remove all the cutting line

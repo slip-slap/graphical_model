@@ -22,12 +22,9 @@ private:
     Ui::MainWindow *ui;
     QTimer* timer;
     GMScene* m_scene;
+    StockEdgeInterface* m_gm_edge;
 
 
-protected:
-    void mousePressEvent(QMouseEvent* ) override;
-    void mouseMoveEvent(QMouseEvent* ) override;
-    void mouseReleaseEvent(QMouseEvent* ) override;
 
 protected slots:
     void foo();
@@ -38,5 +35,8 @@ public slots:
     void on_actionZoom_Out_triggered();
     void on_actionSave_triggered();
     void on_actionClear_triggered();
+private slots:
+    void on_actionUndo_triggered();
+    void on_pushButton_clicked();
 };
 #endif // MAINWINDOW_H

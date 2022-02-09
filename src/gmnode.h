@@ -19,6 +19,7 @@ class GMNode: public StockNodeInterface, public GMSerializable
 public:
     GMNode(GMScene* scene);
     GMNode(GMScene* scene, int placeholder);
+    GMNode(GMScene* scene, std::string title);
 
     GMQtGraphicsNode* GetStockGraphicsNode();
     GMScene* GetGMScene();

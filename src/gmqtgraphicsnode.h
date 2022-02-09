@@ -20,6 +20,7 @@ public:
     double GetNodeStartY();
     double GetNodeEndX();
     double GetNodeEndY();
+    void SetTitle(std::string title);
 
 
 public:

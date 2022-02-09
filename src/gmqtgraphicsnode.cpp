@@ -40,6 +40,11 @@ double GMQtGraphicsNode::GetNodeEndY()
     return m_node_end_y;
 }
 
+void GMQtGraphicsNode::SetTitle(std::string title)
+{
+    m_title = title;
+}
+
 void GMQtGraphicsNode::InitUI()
 {
     this->setFlag(QGraphicsItem::ItemIsSelectable);
@@ -66,8 +71,7 @@ void GMQtGraphicsNode::paint(QPainter *painter, const QStyleOptionGraphicsItem *
 
     title->setFillRule(Qt::WindingFill);
     title->addRoundedRect(0,0,90,20,5,5);
-    title->addText(0,0,QFont("Times",20),"Tencent");
-    title->addText(80,0,QFont("Times",20),m_title.c_str());
+    title->addText(20,0,QFont("Times",20),m_title.c_str());
     painter->drawPath(title->simplified());
 
     painter->setBrush(Qt::NoBrush);

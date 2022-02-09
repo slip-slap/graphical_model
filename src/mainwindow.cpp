@@ -29,15 +29,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->menubar->setNativeMenuBar(false);
     m_scene = new GMScene();
     GMQtGraphicsCuttingLine* cutting_line = new GMQtGraphicsCuttingLine((GMQtGraphicScene*)m_scene->GetGraphicsScenePtr());
-    GMNode* gm_node = new GMNode(m_scene);
+    GMNode* gm_node = new GMNode(m_scene, "Tencent");
     gm_node->SetStockNodePosition(QPointF(50,50));
-    GMNode* gm_node2 = new GMNode(m_scene);
+    GMNode* gm_node2 = new GMNode(m_scene, "Facebook");
     gm_node2->SetStockNodePosition(QPointF(200,200));
-    GMNode* gm_node3 = new GMNode(m_scene);
+    GMNode* gm_node3 = new GMNode(m_scene,"Tesla");
     gm_node3->SetStockNodePosition(QPointF(400,100));
-    GMNode* gm_node4 = new GMNode(m_scene);
+    GMNode* gm_node4 = new GMNode(m_scene,"JD");
     gm_node4->SetStockNodePosition(QPointF(300,200));
-    new GMEdge(m_scene, gm_node,POSITION::SOUTH_ANCHOR, gm_node2,POSITION::NORTH_ANCHOR);
+    m_gm_edge =  new GMEdge(m_scene, gm_node,POSITION::SOUTH_ANCHOR, gm_node2,POSITION::NORTH_ANCHOR);
     new GMEdge(m_scene, gm_node2,POSITION::NORTH_ANCHOR, gm_node3,POSITION::NORTH_ANCHOR);
     new GMEdge(m_scene, gm_node,POSITION::NORTH_ANCHOR, gm_node3,POSITION::NORTH_ANCHOR);
     m_scene->GetGraphicsScenePtr()->setBackgroundBrush(Qt::black);
@@ -54,7 +54,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->ui->graphicsView->setDragMode(QGraphicsView::RubberBandDrag);
 
 
-
     timer = new QTimer(this);
     //connect(timer, SIGNAL(timeout()),scene,SLOT(advance()));
     //connect(timer, SIGNAL(timeout()),scene,SLOT(update()));
@@ -69,26 +68,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::mousePressEvent(QMouseEvent* event)
-{
-    std::cout<<"mainwindow press event"<<std::endl;
-    //std::string memory = std::to_string(USED_MEMRORY);
-    //QString message(memory.c_str());
-    //ui->statusbar->showMessage(message);
-    QMainWindow::mousePressEvent(event);
-}
 
-void MainWindow::mouseMoveEvent(QMouseEvent* event)
-{
-    std::cout<<"mainwindow move event"<<std::endl;
-    QMainWindow::mouseMoveEvent(event);
-}
-
-void MainWindow::mouseReleaseEvent(QMouseEvent* event)
-{
-    std::cout<<"mainwindow release event"<<std::endl;
-    QMainWindow::mouseReleaseEvent(event);
-}
 
 void MainWindow::foo()
 {
@@ -141,4 +121,15 @@ void MainWindow::on_actionSave_triggered()
 void MainWindow::on_actionClear_triggered()
 {
     m_scene->ClearScene();
+}
+
+void MainWindow::on_actionUndo_triggered()
+{
+    std::cout<<"undo"<<std::endl;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    m_scene->RemoveEdge(m_gm_edge);
+    std::cout<<"output"<<std::endl;
 }

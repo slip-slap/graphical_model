@@ -18,14 +18,15 @@ void GMQtGraphicsEdge::paint(QPainter *painter, const QStyleOptionGraphicsItem *
     pen.setWidth(5);
     painter->setPen(pen);
     painter->setBrush(QBrush(Qt::red));
-    m_path.moveTo(m_source);
-    //QPainterPath path(m_source);
-    m_path.lineTo(m_target);
-    painter->drawPath(m_path);
-    if(this->isSelected()){
+    QPainterPath path(m_source);
+    path.lineTo(m_target);
+    painter->drawPath(path);
+
+    if(this->isSelected())
+    {
         pen.setColor(Qt::white);
         painter->setPen(pen);
-        painter->drawPath(m_path);
+        painter->drawPath(path);
     }
 }
 
@@ -55,5 +56,7 @@ bool GMQtGraphicsEdge::isIntersectsWith(QPointF p1, QPointF p2)
 {
     QPainterPath* path = new QPainterPath(p1);
     path->lineTo(p2);
-    return path->intersects(m_path);
+    QPainterPath line(m_source);
+    line.lineTo(m_target);
+    return path->intersects(line);
 }
