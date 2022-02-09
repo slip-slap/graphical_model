@@ -17,5 +17,6 @@ Installation
 3. googletest
 4. qt 5.15
 5. clang++
-6. 
+
 ### Demo
+![alt text](https://github.com/slip-slap/graphical_model/blob/master/introduction.gif)
